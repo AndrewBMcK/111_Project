@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Tasks{% endblock title %}
+
+{% block content %}
+    <h1>Tasks</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Summary</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in tasks %}
+            <tr class="custom-primary-bg">
+                <td>
+                    <a href="{{ url_for('show_task_detail', pk=task['id']) }}">
+                        {{ task["summary"] }}
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}

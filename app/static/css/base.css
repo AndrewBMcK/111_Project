@@ -1,0 +1,19 @@
+h1 {
+    text-align: center;
+}
+
+.table tbody tr.custom-primary-bg td {
+    background-color: #89ade4;
+    color: black;
+}
+
+.table tbody tr.custom-primary-bg td a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s; 
+}
+
+.table tbody tr.custom-primary-bg td a:hover {
+    color: #003366; 
+}
+

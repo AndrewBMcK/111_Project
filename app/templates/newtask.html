@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}New Task{% endblock title %}
+
+{% block content %}
+    <h1>New Task</h1>
+
+    {% if success_message %}
+        <div class="alert alert-success" role="alert">
+            {{ success_message }}
+        </div>
+    {% endif %}
+
+    <form action="{{ url_for('create_new_task') }}" method="post">
+        <div class="form-floating mb-3">
+            <input type="task" name="task" class="form-control" id="floatingTask" placeholder="Task" required>
+            <label for="floatingTask">Task</label>
+        </div>
+
+        <div class="form-floating">
+            <textarea name="description" class="form-control" placeholder="Description" id="floatingTextarea2" style="height: 100px"></textarea>
+            <label for="floatingTextarea2">Description</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock content %}
